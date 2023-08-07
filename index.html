@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Slot Game</title>
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.slot-machine {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reels {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.reel {
+  width: 100px;
+  height: 150px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+#spin-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#spin-button:hover {
+  background-color: #0056b3;
+}
+  </style>
+</head>
+<body>
+  <div class="slot-machine">
+    <div class="reels">
+      <div class="reel" id="reel1"></div>
+      <div class="reel" id="reel2"></div>
+      <div class="reel" id="reel3"></div>
+      <div class="reel" id="reel4"></div>
+      <div class="reel" id="reel5"></div>
+      <div class="reel" id="reel6"></div>
+    </div>
+    <div class="reels">
+        <div class="reel" id="reel7"></div>
+        <div class="reel" id="reel8"></div>
+        <div class="reel" id="reel9"></div>
+        <div class="reel" id="reel10"></div>
+        <div class="reel" id="reel11"></div>
+        <div class="reel" id="reel12"></div>
+      </div>
+      <div class="reels">
+        <div class="reel" id="reel13"></div>
+        <div class="reel" id="reel14"></div>
+        <div class="reel" id="reel15"></div>
+        <div class="reel" id="reel16"></div>
+        <div class="reel" id="reel17"></div>
+        <div class="reel" id="reel18"></div>
+      </div>
+    <button id="spin-button">Spin</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+<script>
+    const symbols = ['🍒', '🍊', '🍋', '🍇', '🍉'];
+const reel1 = document.getElementById('reel1');
+const reel2 = document.getElementById('reel2');
+const reel3 = document.getElementById('reel3');
+const reel4 = document.getElementById('reel4');
+const reel5 = document.getElementById('reel5');
+const reel6 = document.getElementById('reel6');
+const reel7 = document.getElementById('reel7');
+const reel8 = document.getElementById('reel8');
+const reel9 = document.getElementById('reel9');
+const reel10 = document.getElementById('reel10');
+const reel11 = document.getElementById('reel11');
+const reel12 = document.getElementById('reel12');
+
+const reel13 = document.getElementById('reel13');
+const reel14 = document.getElementById('reel14');
+const reel15 = document.getElementById('reel15');
+const reel16 = document.getElementById('reel16');
+const reel17 = document.getElementById('reel17');
+const reel18 = document.getElementById('reel18');
+const spinButton = document.getElementById('spin-button');
+
+function getRandomSymbol() {
+  const randomIndex = Math.floor(Math.random() * symbols.length);
+  return symbols[randomIndex];
+}
+
+function spinReels() {
+  reel1.textContent = getRandomSymbol();
+  reel2.textContent = getRandomSymbol();
+  reel3.textContent = getRandomSymbol();
+  reel4.textContent = getRandomSymbol();
+  reel5.textContent = getRandomSymbol();
+  reel6.textContent = getRandomSymbol();
+
+  reel7.textContent = getRandomSymbol();
+  reel8.textContent = getRandomSymbol();
+  reel9.textContent = getRandomSymbol();
+  reel10.textContent = getRandomSymbol();
+  reel11.textContent = getRandomSymbol();
+  reel12.textContent = getRandomSymbol();
+
+  reel13.textContent = getRandomSymbol();
+  reel14.textContent = getRandomSymbol();
+  reel15.textContent = getRandomSymbol();
+  reel16.textContent = getRandomSymbol();
+  reel17.textContent = getRandomSymbol();
+  reel18.textContent = getRandomSymbol();
+}
+
+spinButton.addEventListener('click', () => {
+  spinReels();
+});
+</script>
+</html>
